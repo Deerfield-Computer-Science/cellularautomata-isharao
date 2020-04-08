@@ -14,6 +14,7 @@ public class WorldController extends GraphicsProgram {
 	public void run(){	
 		setUpWorld();
 		runWorld();
+		System.out.println("Finished running main");
 	}
 	
 	public void init(){
@@ -24,6 +25,7 @@ public class WorldController extends GraphicsProgram {
 		theWorld = new World(20,20);
 		theWorld.getCreatureList().add( new Grass( new Location(3,6), theWorld ));
 		theWorld.getCreatureList().add( new Grass( new Location(4,6), theWorld ));
+		theWorld.getCreatureList().add( new Cow( new Location(2,3), theWorld ));
 		theWorldCanvas = this.getGCanvas();
 	}
 	
