@@ -7,6 +7,7 @@ public class Flower extends Plant {
 		super(l,w);
 		myLifeSpan = 2;
 		myColor= Color.YELLOW;
+		species= "Flower";
 	}
 	
 	public void reproduce() {

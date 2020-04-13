@@ -11,15 +11,17 @@ public abstract class LifeForm {
 	protected Color myColor;
 	protected int myAge;
 	protected int mySex;
+	protected String species;
 	protected boolean alive;
 	RandomGenerator rgen = RandomGenerator.getInstance();
 	
 	// lifeform constructors
-	public LifeForm(int myLifeSpan, Location myLocation, Color myColor, World myWorld) {
+	public LifeForm(String species,int myLifeSpan, Location myLocation, Color myColor, World myWorld) {
 		super();
 		this.myLifeSpan = myLifeSpan;
 		this.myLocation = myLocation;
 		this.myColor = myColor;
+		this.species= species;
 		this.myWorld = myWorld; 
 		this.mySex = rgen.nextInt(0,1);
 		alive = true;
@@ -93,9 +95,17 @@ public abstract class LifeForm {
 		this.mySex = sex;
 	}
 	
+	public String getSpecies() {
+		return species;
+	}
+
+	public void setSpecies(String species) {
+		this.species = species;
+	}
+	
 	@Override
 	public String toString() {
-		return "LifeForm [myLifeSpan=" + myLifeSpan + ", myLocation="
+		return "LifeForm [species=" + species + "myLifeSpan=" + myLifeSpan + ", myLocation="
 				+ myLocation + ", myColor=" + myColor + ", mySex= " + mySex + "]";
 	}
 }

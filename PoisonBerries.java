@@ -7,6 +7,7 @@ public class PoisonBerries extends Plant {
 		super(l,w);
 		myLifeSpan = 2;
 		myColor= Color.MAGENTA;
+		species= "Poison Berries";
 	}
 	
 	public void reproduce() {

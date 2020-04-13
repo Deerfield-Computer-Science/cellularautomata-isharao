@@ -8,6 +8,7 @@ public class Finch extends Animal {
 		super(myLocation,myWorld);
 		myColor= Color.ORANGE;
 		myLifeSpan = 5;
+		species= "Finch";
 
 	}
 	@Override
