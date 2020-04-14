@@ -30,16 +30,18 @@ public class Cow extends LifeForm {
 		myWorld.getCreatureList().get(i).setMyLocation(loc);
 	}
 	
-	public void eat(int i) {
-		int myX = myWorld.getCreatureList().get(i).getMyLocation().getX();
-		int myY = myWorld.getCreatureList().get(i).getMyLocation().getY();
-		Location neighbooring1 = new Location(myX+1,myY+1);
-		Location neighbooring2 = new Location(myX-1,myY+1);
-		Location neighbooring3 = new Location(myX+1,myY-1);
-		Location neighbooring4 = new Location(myX-1,myY-1);
-		if ((myWorld.getCreatureList().get(i).getMyLocation()==neighbooring1) || (myWorld.getCreatureList().get(i).getMyLocation()==neighbooring2) || (myWorld.getCreatureList().get(i).getMyLocation()==neighbooring3) || (myWorld.getCreatureList().get(i).getMyLocation()==neighbooring4)) {
-			myWorld.getCreatureList().remove(i);
-//			not sure how to make it so it only eats grass
+	public void eat() {
+		for (int i=0; i<myWorld.getCreatureList().size(); i++) {
+			if (myLocation.getX()==myWorld.getCreatureList().get(i).getMyLocation().getX()&&myLocation.getY()==myWorld.getCreatureList().get(i).getMyLocation().getY()) {
+				String species2=myWorld.getCreatureList().get(i).getSpecies();
+				if(species2.compareTo("Poison Berries")!=0&&species2.compareTo("Finch")!=0&&species2.compareTo("Dinosaur")!=0&&species2.compareTo("Human")!=0&&species2.compareTo("Cow")!=0) {
+					myWorld.getCreatureList().get(i).setAge(500);
+				}else if(species2.compareTo("Poison Berries")==0) {
+					myAge=500;
+				}
+		
+			}
+			
 		}
-}
+	}
 }

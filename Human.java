@@ -18,5 +18,20 @@ public class Human extends LifeForm {
 		myWorld.getCreatureList().add(new Human(new Location(newX,newY), myWorld));
 		
 	}
+	
+	public void eat() {
+		for (int i=0; i<myWorld.getCreatureList().size(); i++) {
+			if (myLocation.getX()==myWorld.getCreatureList().get(i).getMyLocation().getX()&&myLocation.getY()==myWorld.getCreatureList().get(i).getMyLocation().getY()) {
+				String species2=myWorld.getCreatureList().get(i).getSpecies();
+				if(species2.compareTo("Poison Berries")!=0&&species2.compareTo("Finch")!=0&&species2.compareTo("Dinosaur")!=0&&species2.compareTo("Human")!=0) {
+					myWorld.getCreatureList().get(i).setAge(500);
+				}else if(species2.compareTo("Poison Berries")==0) {
+					myAge=500;
+				}
+		
+			}
+			
+		}
+	}
 
 }

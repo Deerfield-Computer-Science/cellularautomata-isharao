@@ -6,12 +6,6 @@ public abstract class Animal extends LifeForm {
 		super(loc, w);
 	}
 	
-	public void eat() {
-		for (int i=0; i<myWorld.getCreatureList().size(); i++) {
-			if (myLocation.getX()==myWorld.getCreatureList().get(i).getMyLocation().getX()&&myLocation.getY()==myWorld.getCreatureList().get(i).getMyLocation().getY()) {
-				String species2=myWorld.getCreatureList().get(i).getSpecies();
-				
-			}
-			
-		}}
+	public abstract void eat();
+	
 }
