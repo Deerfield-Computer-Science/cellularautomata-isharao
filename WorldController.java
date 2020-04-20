@@ -7,6 +7,7 @@ import acm.util.*;
 public class WorldController extends GraphicsProgram {
 	
 	private World theWorld;
+	private World newWorld;
 	private GCanvas theWorldCanvas;
 	public static final int APPLICATION_WIDTH = 1000;
 	public static final int APPLICATION_HEIGHT = 1000;
@@ -23,6 +24,7 @@ public class WorldController extends GraphicsProgram {
 	
 	public void setUpWorld() {
 		theWorld= new World (20,20);
+		newWorld= new World (20,20);
 		theWorld.getCreatureList().add(new Grass(new Location(3,6), theWorld ));
 		theWorld.getCreatureList().add(new Grass( new Location(4,6), theWorld ));
 		theWorld.getCreatureList().add(new Grass( new Location(11,6), theWorld ));
